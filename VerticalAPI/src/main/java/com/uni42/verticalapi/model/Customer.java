@@ -33,6 +33,6 @@ public class Customer {
     private String surname;
     @Column(name = "birth")
     private Date birth;
-    @Column(name = "accountBalance")
+    @Column(name = "account_balance")
     private Long accountBalance;
 }
