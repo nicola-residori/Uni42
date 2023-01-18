@@ -1,5 +1,4 @@
-INSERT INTO User (username, password)
-values ('admin', 'admin'),
-values ('a.baglio', '123456'),
-values ('g.storti', '123456'),
-values ('g.poretti', '123456');
+INSERT INTO User (username, password) values ('admin', '$2a$10$Kq4II.X8KRHQwA5oUJsIQOkgzm5GioG87fWg8NbNsfdMnDQPTDYMC');
+INSERT INTO User (username, password) values ('a.baglio', '$2a$10$Kq4II.X8KRHQwA5oUJsIQOkgzm5GioG87fWg8NbNsfdMnDQPTDYMC');
+INSERT INTO User (username, password) values ('g.storti', '$2a$10$Kq4II.X8KRHQwA5oUJsIQOkgzm5GioG87fWg8NbNsfdMnDQPTDYMC');
+INSERT INTO User (username, password) values ('g.poretti', '$2a$10$Kq4II.X8KRHQwA5oUJsIQOkgzm5GioG87fWg8NbNsfdMnDQPTDYMC');

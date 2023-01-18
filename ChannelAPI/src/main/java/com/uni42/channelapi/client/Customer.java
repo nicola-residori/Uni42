@@ -1,13 +1,15 @@
 package com.uni42.channelapi.client;
 
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
-import javax.persistence.Column;
 import java.io.Serializable;
 import java.sql.Date;
 
-@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@ToString
 @Builder
 public class Customer implements Serializable {
 

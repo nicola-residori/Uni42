@@ -18,7 +18,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(UserNotAuthorizedException.class)
     public ResponseEntity<ErrorResponse> handleUserNotAuthorizedException(UserNotAuthorizedException ex) {
         /* - prepare response - */
-        ErrorResponse error = ErrorResponse.builder().resource(RESOURCE).type("UNAUTHORIZED").message(ExceptionUtils.getStackTrace(ex)).timestamp(new Date()).build();
+        ErrorResponse error = ErrorResponse.builder().resource(RESOURCE).type("UNAUTHORIZED").message(ex.getMessage()).timestamp(new Date()).build();
         return new ResponseEntity<>(error, HttpStatus.UNAUTHORIZED);
     }
 
