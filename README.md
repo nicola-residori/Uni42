@@ -1,6 +1,10 @@
 # Uni42
 Spring Boot REST APIs - exercise for APIs interactions
 
-### Why 42?
-If you are asking why the 42, the secret is in the name, but remember:
-the Answer is certainly correct, but probably, the question will be wrong!
+## Why 42?
+<p float="left">
+  <img src="https://github.com/nicola-residori/Uni42/blob/main/_logo.png" width="200"/>
+  <p>If you are asking why the 42, the secret is in the name, but remember:
+The Answer is certainly correct, but probably, the question will be wrong!</p> 
+</p>
+ 
