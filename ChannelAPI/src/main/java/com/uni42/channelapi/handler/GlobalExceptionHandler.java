@@ -2,6 +2,7 @@ package com.uni42.channelapi.handler;
 
 import com.uni42.channelapi.exception.UserNotAuthorizedException;
 import com.uni42.channelapi.model.ErrorResponse;
+import io.github.resilience4j.circuitbreaker.CallNotPermittedException;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +15,13 @@ import java.util.Date;
 public class GlobalExceptionHandler {
 
     public static final String RESOURCE = "Profile";
+
+    @ExceptionHandler(CallNotPermittedException.class)
+    public ResponseEntity<ErrorResponse> handleCallNotPermittedException(CallNotPermittedException ex) {
+        /* - prepare response - */
+        ErrorResponse error = ErrorResponse.builder().resource(RESOURCE).type("CIRCUIT_BREAKER_OPEN").message(ex.getMessage()).timestamp(new Date()).build();
+        return new ResponseEntity<>(error, HttpStatus.SERVICE_UNAVAILABLE);
+    }
 
     @ExceptionHandler(UserNotAuthorizedException.class)
     public ResponseEntity<ErrorResponse> handleUserNotAuthorizedException(UserNotAuthorizedException ex) {

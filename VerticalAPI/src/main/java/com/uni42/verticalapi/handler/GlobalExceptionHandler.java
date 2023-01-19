@@ -14,7 +14,7 @@ import java.util.Date;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-    public static final String RESOURCE = "Configurator";
+    public static final String RESOURCE = "Customer";
 
     @ExceptionHandler(DuplicateCustomerException.class)
     public ResponseEntity<ErrorResponse> handleDuplicateConfiguratorException(DuplicateCustomerException ex) {
