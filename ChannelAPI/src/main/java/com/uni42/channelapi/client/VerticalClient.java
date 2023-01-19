@@ -1,6 +1,7 @@
 package com.uni42.channelapi.client;
 
 import com.uni42.channelapi.util.ConfigurationUtil;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.core.ParameterizedTypeReference;
@@ -29,6 +30,7 @@ public class VerticalClient {
      * @return customer
      * @throws Exception, when something goes wrong during calling service
      */
+    @CircuitBreaker(name = "vertical_customer")
     public Customer retrieveCustomer(String username) throws Exception {
 
         /* - retrieve service config - */
