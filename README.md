@@ -7,14 +7,14 @@ Uni42 is a SpringBoot tutorial project of a RestAPIs and their interactions.
 ## System Description
 ![](./_doc/ServiceSchema_2.png)
 1. **Administrator**: Spring Boot Admin Console, to see and monitor all APIs.
-2. **Configurator**: RestAPI to manage (create, retrieve, update and delete records) custom configuration attributes that can be changed in realtime.
+2. **Configurator**: RestAPI to manage (create, retrieve, update and delete) custom configuration attributes that can be changed in realtime.
 3. **Authenticator**: RestAPI service to perform authentication in order to generate a JWToken that will be spent to call ChannelAPI.
 4. **VerticalAPI**: RestAPI service that provides Customer service and C.R.U.D. operation to manage customer and its data.
 5. **ChannelAPI**: RestAPI invoked by final user, to retrieve Customer information and last access.
 
 # How to run?
-The project is implemented using maven and SpringBoot, so to run software is really easy.  
-Into the project root directory is enough execute following shell commands:
+The project is implemented using maven and SpringBoot, so execute software is really easy.  
+Into the project root directory is enough to run following shell commands:
 
 ```shell
 #-- to run Administrator
@@ -61,4 +61,4 @@ Obviously we suggest to use an IDE (e.g. [IntelliJ](https://www.jetbrains.com/id
 # Why 42?
 <img src="./_doc/logo_1MB.jpg" width="200"/>
 
-###### If you are asking why the 42, the secret is in the name, but remember: <br/> The Answer is certainly correct, but probably, the question will not.
+_If you are asking why the 42, the secret is in the name, but remember: <br/> The Answer is certainly correct, but probably, the question will not._
