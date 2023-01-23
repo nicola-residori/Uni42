@@ -3,7 +3,6 @@ package com.uni42.channelapi.handler;
 import com.uni42.channelapi.exception.UserNotAuthorizedException;
 import com.uni42.channelapi.model.ErrorResponse;
 import io.github.resilience4j.circuitbreaker.CallNotPermittedException;
-import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -33,7 +32,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleException(Exception ex) {
         /* - prepare response - */
-        ErrorResponse error = ErrorResponse.builder().resource(RESOURCE).type("GENERIC").message(ExceptionUtils.getStackTrace(ex)).timestamp(new Date()).build();
+        ErrorResponse error = ErrorResponse.builder().resource(RESOURCE).type("GENERIC").message(ex.getMessage()).timestamp(new Date()).build();
         return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
