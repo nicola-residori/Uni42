@@ -17,21 +17,18 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(CallNotPermittedException.class)
     public ResponseEntity<ErrorResponse> handleCallNotPermittedException(CallNotPermittedException ex) {
-        /* - prepare response - */
         ErrorResponse error = ErrorResponse.builder().resource(RESOURCE).type("CIRCUIT_BREAKER_OPEN").message(ex.getMessage()).timestamp(new Date()).build();
         return new ResponseEntity<>(error, HttpStatus.SERVICE_UNAVAILABLE);
     }
 
     @ExceptionHandler(UserNotAuthorizedException.class)
     public ResponseEntity<ErrorResponse> handleUserNotAuthorizedException(UserNotAuthorizedException ex) {
-        /* - prepare response - */
         ErrorResponse error = ErrorResponse.builder().resource(RESOURCE).type("UNAUTHORIZED").message(ex.getMessage()).timestamp(new Date()).build();
         return new ResponseEntity<>(error, HttpStatus.UNAUTHORIZED);
     }
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleException(Exception ex) {
-        /* - prepare response - */
         ErrorResponse error = ErrorResponse.builder().resource(RESOURCE).type("GENERIC").message(ex.getMessage()).timestamp(new Date()).build();
         return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
     }
